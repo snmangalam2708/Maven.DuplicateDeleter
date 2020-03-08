@@ -10,6 +10,16 @@ public abstract class DuplicateDeleter<T> implements DuplicateDeleterInterface<T
         this.array = intArray;
     }
 
+    public Integer occurences(T valueToCount, T[] toEval) {
+        Integer counter = 0;
+        for (int i = 0; i < toEval.length; i++){
+            if(toEval[i].equals(valueToCount)){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
     abstract public T[] removeDuplicates(int maxNumberOfDuplications);
     abstract public T[] removeDuplicatesExactly(int exactNumberOfDuplications);
 }
